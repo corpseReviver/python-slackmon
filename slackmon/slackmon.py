@@ -7,7 +7,7 @@ of time for a Workspace.
 
 import argparse
 import json
-from monitor import Monitor
+from slackmon.monitor import Monitor
 
 
 def main():
