@@ -9,8 +9,8 @@ setup(
   a specified amount of time for a Workspace.',
   author = 'Rob Sitro',                   # Type in your name
   author_email = 'rsitro4@gmail.com',      # Type in your E-Mail
-  url = 'https://github.com/corpseReviver/slackmon',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/corpseReviver/slackmon/archive/v_03.tar.gz',    # I explain this later on
+  url = 'https://github.com/corpseReviver/python-slackmon',   # Provide either the link to your github or to your website
+  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_01.tar.gz',    # I explain this later on
   keywords = ['slack auditor', 'slack', 'slack message retriever', 'slack logging', 'logging'],   # Keywords that define your package best
   install_requires=[ 
           'pathvalidate',
