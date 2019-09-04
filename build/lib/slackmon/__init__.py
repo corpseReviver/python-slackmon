@@ -1,0 +1,1 @@
+from slackmon.slackmon import create_monitor

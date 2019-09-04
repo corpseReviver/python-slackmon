@@ -3,5 +3,6 @@ README.rst
 setup.cfg
 setup.py
 slackmon/__init__.py
+slackmon/__main__.py
 slackmon/monitor.py
 slackmon/slackmon.py
