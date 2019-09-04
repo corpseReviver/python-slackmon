@@ -1,4 +1,7 @@
-from distutils.core import setup
+from setuptools import setup
+
+with open('README.md') as f:
+    long_description = f.read()
 
 setup(
   name = 'slackmon',
@@ -8,11 +11,13 @@ setup(
   description = 'A Slack channel message retriever. This script obtains \
   Slack messages for all channels (public, private, direct, and group) for \
   a specified amount of time for a Workspace.',
-  author = 'Rob Sitro',                   # Type in your name
-  author_email = 'rsitro4@gmail.com',      # Type in your E-Mail
-  url = 'https://github.com/corpseReviver/python-slackmon',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_1_2.tar.gz',    # I explain this later on
-  keywords = ['slack auditor', 'slack', 'slack message retriever', 'slack logging', 'logging'],   # Keywords that define your package best
+  long_description=long_description,
+    long_description_content_type='text/markdown', 
+  author = 'Rob Sitro',  
+  author_email = 'rsitro4@gmail.com',
+  url = 'https://github.com/corpseReviver/python-slackmon',
+  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_1_2.tar.gz',
+  keywords = ['slack auditor', 'slack', 'slack message retriever', 'slack logging', 'logging'],
   install_requires=[ 
           'pathvalidate',
           'argparse'
