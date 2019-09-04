@@ -60,11 +60,11 @@ Arguments:
       token {str} -- Slack web API token
 
    Keyword Arguments:
-      outfile {str} -- A path to export your response to. Must be
-      JSON. (default: {None}) frequency {int} -- Number of seconds to
-      capture messages from starting now. (default: {None}) verbose
-      {bool} -- Prints verbose logging data to screen if set to True
-      (default: {False})
+      outfile {str} -- A path to export your response to. Must be JSON. (default: {None}) 
+      
+      frequency {int} -- Number of seconds to capture messages from starting now. (default: {None}) 
+      
+      verbose {bool} -- Prints verbose logging data to screen if set to True (default: {False})
 
    Returns:
       JSON -- All queried messages formatted in a JSON string.
