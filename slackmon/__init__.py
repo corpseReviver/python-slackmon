@@ -1,1 +1,1 @@
-from slackmon.slackmon import create_monitor
+from slackmon.slackmon import get_im_messages, get_mpim_messages, get_all_messages, get_private_channel_messages, get_public_channel_messages
