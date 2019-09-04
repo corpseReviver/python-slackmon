@@ -80,6 +80,9 @@ Returns:
 >> {"status": "complete", "data": "Wrote data to path/data.json"}
 
 
-### Development
+# Development
 Want to contribute? Do it!
+
+# Questions
+Email me at corpsereviver8@gmail.com
 
