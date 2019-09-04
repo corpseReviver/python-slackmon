@@ -52,6 +52,32 @@ $ slackmon [-h] [-v] [--token] [--im] [--mpim] [--private-channels] [--public-ch
 
 `slackmon.get_public_channel_messages(token, outfile=None, frequency=None, verbose=False)`
 
+These methods return messages from specified channels, im's or mpim's (group messages). 
+
+Workspace messages are tied to your Slack web API token. By entering the frequency in seconds, you can return all messages within a given timeframe. For example if you enter 3600 as your frequency (1 hour), you will return all messages within the last hour of calling this method. If left blank the default value  is 1 hour. You can also output response to the console or to an outfile (JSON is only  supported as of now). If you don't specify an outfile, a response will be  returned to your console.
+
+Arguments:
+      token {str} -- Slack web API token
+
+   Keyword Arguments:
+      outfile {str} -- A path to export your response to. Must be
+      JSON. (default: {None}) frequency {int} -- Number of seconds to
+      capture messages from starting now. (default: {None}) verbose
+      {bool} -- Prints verbose logging data to screen if set to True
+      (default: {False})
+
+   Returns:
+      JSON -- All queried messages formatted in a JSON string.
+
+ **Example:**
+
+>> data = get_all_messages(token='jKdl123Akd=DA', outfile='path/data.json', frequency=3600 )`
+
+>> print(data)
+
+>> {"status": "complete", "data": "Wrote data to path/data.json"}
+
+
 ### Development
 Want to contribute? Do it!
 
