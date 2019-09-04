@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
   name = 'slackmon',
   packages = ['slackmon'],
-  version = '1.3',
+  version = '1.2',
   license='GNU GENERAL PUBLIC LICENSE', 
   description = 'A Slack channel message retriever. This script obtains \
   Slack messages for all channels (public, private, direct, and group) for \
@@ -11,7 +11,7 @@ setup(
   author = 'Rob Sitro',                   # Type in your name
   author_email = 'rsitro4@gmail.com',      # Type in your E-Mail
   url = 'https://github.com/corpseReviver/python-slackmon',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_1_3.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_1_2.tar.gz',    # I explain this later on
   keywords = ['slack auditor', 'slack', 'slack message retriever', 'slack logging', 'logging'],   # Keywords that define your package best
   install_requires=[ 
           'pathvalidate',
