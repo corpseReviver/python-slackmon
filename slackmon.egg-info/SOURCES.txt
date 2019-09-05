@@ -1,0 +1,13 @@
+README.md
+setup.cfg
+setup.py
+slackmon/__init__.py
+slackmon/__main__.py
+slackmon/monitor.py
+slackmon/slackmon.py
+slackmon.egg-info/PKG-INFO
+slackmon.egg-info/SOURCES.txt
+slackmon.egg-info/dependency_links.txt
+slackmon.egg-info/entry_points.txt
+slackmon.egg-info/requires.txt
+slackmon.egg-info/top_level.txt

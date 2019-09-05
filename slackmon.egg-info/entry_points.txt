@@ -1,0 +1,3 @@
+[console_scripts]
+slackmon = slackmon.__main__:main
+

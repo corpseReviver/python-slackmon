@@ -6,7 +6,7 @@ with open('README.md') as f:
 setup(
   name = 'slackmon',
   packages = ['slackmon'],
-  version = '1.2',
+  version = '1.4.1',
   license='GNU GENERAL PUBLIC LICENSE', 
   description = 'A Slack channel message retriever. This script obtains \
   Slack messages for all channels (public, private, direct, and group) for \
@@ -16,7 +16,7 @@ setup(
   author = 'Rob Sitro',  
   author_email = 'rsitro4@gmail.com',
   url = 'https://github.com/corpseReviver/python-slackmon',
-  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_1_2.tar.gz',
+  download_url = 'https://github.com/corpseReviver/python-slackmon/archive/v_1_4_1.tar.gz',
   keywords = ['slack auditor', 'slack', 'slack message retriever', 'slack logging', 'logging'],
   install_requires=[ 
           'pathvalidate',
