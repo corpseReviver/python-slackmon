@@ -3,7 +3,7 @@ import json
 
 
 def lambda_function():
-	token = "xoxp-730963996086-728779449328-739831459073-e5e640879be2dd37806c2e2a057ba40c"
+	token = ""
 	logs = slackmon.get_all_messages(token=token, frequency=3600)
 	formatted_logs = format_logs(json.loads(logs))
 	if formatted_logs:
