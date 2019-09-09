@@ -52,12 +52,12 @@ class Monitor:
         True in the "ok" key. 
 
         """
-
         try:
             response = self.client.api_test()
         except Exception as e:
             print('--> Slack Web API connection failed. Exception --> {}'.format(e))
-            sys.exit()
+            self.client = slack.WebClient(token=self.token, ssl=False)
+            response = self.client.api_test()
 
         if response.get('ok') is False:
             raise Exception('Unable to connect to the Slack Web API.')
@@ -133,6 +133,42 @@ class Monitor:
 
         return response
 
+    def translate_channel_id(self, channel_id:str) -> str:
+        """Converts a Slack channel ID to a channel name
+
+        Using the Slack API method channels.info, we return the channel
+        name and normalized name. 
+
+        Arguments:
+            channel_id {str} -- A Slack channel ID
+
+        Returns:
+            {dict} -- A channels name and normalized name
+                ### Return format ###
+                {
+                    "name": "{str} name of channel ID",
+                    "normalized_name": "{str} normalized name of channel ID"
+                }
+        """
+
+        try:
+            response = self.client.channels_info(channel=channel_id)
+        except:
+            name = ''
+            name_normalized = ''
+
+        try:
+            name = response.get('channel').get('name')
+        except:
+            name = ''
+
+        try:
+            name_normalized = response.get('channel').get('name_normalized')
+        except:
+            name_normalized = ''
+
+        return {"name": name, "name_normalized": name_normalized}
+
     def translate_user_id(self, user_id:str) -> dict:
         """Converts a Slack user ID to a real name and email address
 
@@ -141,16 +177,14 @@ class Monitor:
         the users ID. 
 
         Arguments:
-            client {slack object} -- A Slack websocket client
             user_id {str} -- A Slack user ID
 
         Returns:
-            {dict} -- Response that contains a status of the response
-                      query and the paylod.  
+            {dict} -- The real name and email of the user id 
                 ### Return format ###
                 {
-                    "status": "{str} error | complete",
-                    "data": "{list} coversation_list response"
+                    "read_name": "{str} real name of a slack ID",
+                    "email": "{str} email address of a slack ID"
                 }
         """
 
@@ -212,6 +246,7 @@ class Monitor:
                 # If any messages are returned, add them to the
                 # response dictionary.
                 messages = response.get('messages')
+
                 if messages:
                     for message in messages:
                         self.vprint('--> Message found for channel ID {}'.format(channel_id))
@@ -221,6 +256,9 @@ class Monitor:
                         # adds users real_name and email into message log
                         message.update(
                             {'user_info': self.translate_user_id(user_id)})
+
+                        message.update(
+                            {'channel_info': self.translate_channel_id(channel_id)})
 
                     data[channel_id] = {"data": messages}
 
